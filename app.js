@@ -1,20 +1,12 @@
 import express from 'express'
-import oste from './routes/oste.js'
+import cheeses from './routes/cheeses/index.js'
 
 const app = express()
 
 app.use(express.static('./public'))
-oste(app)
+app.use(express.json())
 
-// app.get('/hej/:name', (req, res) => {
-// 	res.setHeader('Content-Type', 'text/html')
-// 	res.send(
-// 		'<link rel="stylesheet" href="/style.css">' +
-// 			'<h1>Hello ' +
-// 			req.params.name +
-// 			' din spade</h1>'
-// 	)
-// })
+cheeses(app)
 
 app.get('/nogetandet', (req, res) => {
 	res.send('Noget helt andet! Brian bruger ikke Mac😩🤢')
