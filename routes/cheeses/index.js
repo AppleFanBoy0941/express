@@ -5,7 +5,7 @@ import upload from '../../middlewares/upload.js'
 import editCheese from './editCheese.js'
 import deleteCheese from './deleteCheese.js'
 
-export default function cheeses(app, client) {
+export default function cheeses(app) {
 	app
 		.route('/api/v1/cheeses/:id?')
 		.all(authorization)

@@ -1,12 +1,9 @@
 import useDB from '../../database.js'
 import { ObjectId } from 'mongodb'
 import dotenv from 'dotenv'
+import URLBuilder from '../../functions/URLBuilder.js'
 
 dotenv.config()
-
-function URLBuilder(resource, id) {
-	return process.env.HOST_ADDRESS + `/api/v1/${resource}/${id}`
-}
 
 export default async function getAllCheeses(request, response) {
 	const { collection, client } = await useDB('cheeses')
